@@ -1,0 +1,92 @@
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf540
+{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\info
+{\author Daniel Tranchina}
+{\*\company New York University}}\vieww14700\viewh15180\viewkind0
+\deftab720
+\pard\pardeftab720\ql\qnatural\pardirnatural
+
+\f0\i\fs24 \cf0 I think it might be good for us to clear up a confusion about the relationship between the time constant of decay of the tail of the phototresponse and the lifetime of R*. Burns and Pugh and many others think that they are one and the same. This is why many are hot and bothered by your papers in which R* decay is slower than they imagine. Of course, the time constant of the tail only represents the lifetime of the longest lived R* state in the context of the multi-state shutoff model. Even if the lifetimes of the various states increase systematically from first to last, there is no inconsistency between a long-lived R* and a short time constant (e.g.70 ms) for the decay of the tail. I fear that may readers will go off thinking on the wrong track and be refractory to our scholarly analysis if we don\'92t set them straight early on.\
+\
+
+\i0 Good point - we are forcing fit to average response, so we are getting tail exactly right by definition.  Make this explicit early on, along with some discussion of the issue.  \
+
+\i \
+On p. 6 where a likelihood approach is described, are the parameters of the model chosen to maximize the likelihood? Also, isn\'92t it necessary to constrain the waveform itself in some way? I believe that what is described assumes that the characteristic feature parameters (e.g. width of the variance) are independent Gaussian random variables. If so, this should be stated.\
+\
+
+\i0 Make clearer we are chosing a specific instantiation of a given model, evaluating likelihood, and repeating across a broad range of parameter settings for a given model to maximize likelihood.  Also yes - assumption is that the properties of the single photon response are independent and Gaussian.  Could check this or could do fitting differently - i.e. given a set of single photon response parameters, evaluate likelihood given empirically-determined distributions from many runs of model.  \
+
+\i \
+Also on p. 6, in section 2.4, I think it is giving Bisegna et al. too much credit to say that they suggested that local depletion of cGMP is the key. As far as I know, they have always spoken in terms of diffusion smoothing out noise, and they don\'92t understand their own model.\
+\
+
+\i0 Ok - careful here.\
+
+\i \
+On p. 7, N is the total number of shutoff steps for R* (Eq. 9).  N is not described correctly just above the equation.\
+\
+
+\i0 Fix this - there are issues with N throughout because need to be better about number of transducins and number of steps in rhodopsin inactivation.\
+
+\i \
+In Fig. 4, the GRK+/- trace seems to be missing. I guess the predicted and measured are one and the same in this case. This could be confusing for the reader.\
+\
+
+\i0 Play with fig - it is identical to the prediction.\
+
+\i \
+It occurs to me that we could perform the same analysis on my Caruso model, making believe that my model responses are real rod responses.\
+\
+
+\i0 It would be great to do the full likelihood stuff with that model - perhaps over a limited set of parameters based on a more exhaustive search using the other model.\
+
+\i \
+On p. 10, what do you mean by the dominant time constant for the decay of light activated PDE activity? How is this measured or inferred?\
+\
+
+\i0 By dominant time constant I mean the time constant measured using the Pepperberg approach.  \
+
+\i \
+I have some ideas about your questions posed on pp. 11-12. The RGS9 OX is an interesting idea. I agree with what you say in the context of the sort of nonlinearity you are assuming. I think that in the Caruso model, the CV_area might go up in the RGS9OX because more of the response, so to speak, occurs at early times when PDE* is more localized and cGMP is more depleted locally. I\'92m not sure about this or about how the waveform might change.  Let\'92s see; I\'92ll do the simulations. I imagine that there are no data on the CV_area in the RGS9 OX because the SPRs are even smaller than WT?\
+\
+If we do include analysis of GCAPS-/- don\'92t we have to model the feedback explicitly? This involves making a choice for the Hill coefficient discussed above. We can certainly do this. It is a parameter in my explicit biochemical kinetic model, so it is no problem for the Caruso simulations.\
+\
+
+\i0 For analysis I have been doing, assuming linearity of the transduction cascade, it gets sucked up into the linear filter used to map rhodopsin's activity to the measured average single photon response.  \
+
+\i \
+The likelihood analysis is fabulous. I have a few questions.  On p.12, it is not clear what tau_Rh is. Is this the mean of the total lifetime of Rh* (i.e. the sum of the lifetimes of the various states), or is it the mean lifetime of one of the states? Also, is the catalytic activity of RH* being ratcheted down for each step towards final shutoff. A related question is, what does alpha signify exactly. I don\'92t find the definition clear.\
+\
+
+\i0 Clarify these.  Probably need figure showing alpha - it is how much each step decreases rhodopsin's activity (0 means the activity does not decline until final step, 1/N means equal decline in activity for each step).  Tau_Rh is probably not the right term - think about this.  We need to set an overall time scale for rhodopsin inactivation - that is the function of that parameter.  It roughly maps onto a time constant.  \
+
+\i \
+I\'92ll do some simulations with my Caruso model soon. These will help us decide how to handle that model in our paper.\
+\
+\
+\pard\pardeftab720\ql\qnatural
+
+\f1 \cf0 I'm pretty sure that transducin compression is not the same\
+kind of nonlinearity as the cGMP depletion nonlinearity in the Caruso et al. model.\
+The Caruso model is a spatiotemporal model and cGMP depletion\
+only occurs within the interdiscal space early in the response before\
+PDE* has had a chance to spread out completely. I believe this is why\
+the Caruso model can reproduce that GCAPs-/- responses\
+(with a Hill coefficient of 4 for Ca feedback onto GC) and the responses of\
+Arr-/- and RK-/-. I attached a few Powerpoint slide that I think I sent you\
+already, just to remind you. A related finding that surprised me is that the reproducibility\
+of WT and GCAPs-/- in the Caruso model are the same.\
+\
+
+\i0 Try two things here.  One, make compression sensitive to transducin activity rather than cumulative transducin activity.  Two, do likelihood analysis with Caruso model.\
+
+\i \
+I don't remember if I said this before or if we discussed it already,\
+but I believe that slowing down the rate of decay of PDE* will\
+increase the CV_area in the Caruso model because the late decaying\
+PDE* is quite spread out over the disc, thus diminishing focal dpeletion of\
+cGMP. I'll check this. If it is so, it could give us a handle on distinguishing\
+the models.\
+}

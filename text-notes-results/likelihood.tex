@@ -1,0 +1,77 @@
+\documentclass[12pt]{article}
+\usepackage[pdftex]{graphicx}
+
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\topmargin}{-0.25in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textwidth}{7in} % Width of text on page
+\setlength{\textheight}{9in} % Height of the body of page (excluding foot, head)
+\setlength{\columnwidth}{\textwidth}
+\setlength{\marginparwidth}{0pt} % Marginal comments
+\setlength{\marginparsep}{0pt} % Marginal comments
+\setlength{\parindent}{0.3in} % Indentation at begin of paragraph 
+%\setlength{\parskip}{0.125in} % Extra vertical space between paragraphs
+%\raggedright
+
+\def\Mg{Mg$^{2+}$~}
+\def\Ba{Ba$^{2+}$~}
+\def\Cd{Cd$^{2+}$~}
+\def\Ca{Ca$^{2+}$~}
+\def\Na{Na$^+$~}
+\def\K{K$^+$~}
+\def\Cl{Cl$^-$~}
+\def\uM{$\mu$M~}
+\def\s{$\sec^{-1}$~}
+\def\phos{${\rm photons}\,\mu {\rm m}^{-2}$}
+\def\phoflux{${\rm photons}\,\mu {\rm m}^{-2} \,{\rm sec}^{-1}$}
+\def\Lphos{photoisomerizations$/$sec$/$L cone}
+\def\CO2{CO$_2$~}
+\def\O2{O$_2$~}
+\def\on{{\sc on}~}
+\def\off{{\sc off}~}
+\def\onoff{{\sc on/off}~}
+\def\bi{\begin{itemize}}
+\def\ei{\end{itemize}}
+\def\i{\item}
+\def\be{\begin{enumerate}}
+\def\ee{\end{enumerate}}
+
+\begin{document}
+
+\baselineskip 18pt
+
+Goal: assess the likelihood of a given model for single photon responses based on a collection of experimental responses.  Use this approach to determine most likely model parameters (e.g. trajectory of Rh* activity, degree of saturation in cascade, number of shutoff steps, ...). 
+
+This could be done in (at least) two broad ways: (1) use simulation of large collection of responses to characterize probability of observing a given response from model, and evaluate likelihood of each experimental response using this characterization; (2) use mean and SEM of parameters of response from experiment and use these to evaluate likelihood of given set of simulated responses.  In principle, option (1) seems preferable because it does not involve any assumptions about what matters about responses, and because measured responses can be evaluated against a large set of simulated responses (as large as needed to eliminate finite sample size effects).  In practice, however, this approach seems difficult for reasons given below.
+
+Consider a set of measured single photon responses $r_n(t)$, which consist of a single photon response with added continuous noise.  We can write these responses compactly as 
+\begin{equation}
+r_n(t) = \sum_i a_{i,n} e_i(t) + \eta(t)
+\end{equation}
+where $a_{i,n}$ are weights specific to response $n$, $e_i$ are a set of basis functions shared by all $r_n$ (e.g. principle components), and $\eta$ represents continuous dark noise.  We want to compare these to a set of simulated responses $s_n(t)$:
+\begin{equation}
+s_n(t) = \sum_i b_{i,n} e_i(t) 
+\end{equation}
+where $e_i$ are the same as those for the measured responses.  
+
+The ideal approach would seem to be to use the simulated responses to generate distributions $P(b_{i,n})$.  These distributions could then be used to evaluate the likelihood of each measured single photon response --- i.e. the likelihood of $a_{i,n}$ for each single photon response.  Combining likelihoods across all measured single photon responses would tell us how likely a given set of measured responses is given a particular model.  We could then search across model parameters to find those that maximize the likelihood.  
+
+A problem with this approach is that we cannot obtain the $a_{i,n}$ directly because we cannot separate, on a single trial, the single photon response and the continuous noise.  It would seem we are limited to making this separation on average, when we do not need to know the noise trajectory but instead only its covariance (or other statistics).  Thus we can estimate the distribution $P(a_{i,n})$ by projecting both single photon responses and failures along each $e_i$ and correcting the single photon response projections for that failures projections (e.g. if we assume things are gaussian we can subtract the variances).  This seems to preclude evaluating the likelihood of individual experimental responses against a set of simulated responses.
+
+One alternative would seem to switch things around --- evaluate the likelihood of individual simulated responses against the set of measured responses.  There are several issues with this approach.  One is whether we have a sufficient number of experimental responses to really estimate the full distributions (i.e. $P(a_{i,n}$).  Another more fundamental issue is that maximizing the likelihood of the simulated responses can be achieved by placing each response at the peak of $P(a_{i,n})$ --- i.e. removing all variability in the simulated responses.  
+
+The issues above would appear to complicate approaches based on single responses. 
+
+An alternative is to evaluate likelihood based on several parameters of the collected responses.  Those parameters could be the distributions of coefficients $P(a_{i,n})$ and $P(b_{i,n})$ or other quantities such as CV$_{area}$, $t_{peak, \sigma^2} / t_{peak, \mu}$, ... .  We can estimate the mean and SEM of these parameters from experiment (e.g. estimate each parameter for each rod and take mean and SEM of those estimates).  Then we can use the mean and SEM of each parameters to evaluate likelihood of given set of simulated responses.  This approach in practice seems to work quite well (meaning likelihood changes substantially for 10-20\% changes in model parameters).  
+
+Practical issues: we can collect a few thousand single photon responses and a few thousand failures.  These come from 10-20 rods.  Responses of different rods differ in amplitude and kinetics, and in addition the properties of the dark noise vary from rod to rod.  Some, but not all, of this rod-to-rod variation can be eliminated by normalizing the peak amplitude and time to peak of the single photon response to 1 before combining data across rods.  
+
+8/30/2011 FMR
+
+Here's another possibility.  Use PCA to identify low dimensional representation of combined experimental single photon responses.  For each cell measure how much of total variability of single photon responses is captured by each dimension.  Use these fractional variance measures, along with total variance (CV) in likelihood analysis.  
+
+
+
+\end{document}

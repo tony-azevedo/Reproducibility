@@ -1,0 +1,499 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  21 OCT 2011 11:06
+entering extended mode
+ \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**outline2.tex
+(./outline2.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, galician, german, ngerman, swissgerman, monogreek, greek, hungarian,
+ icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, marathi, or
+iya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, kurmanji,
+ lao, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk, pol
+ish, portuguese, romanian, russian, sanskrit, serbian, serbianc, slovak, sloven
+ian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, welsh, loaded
+.
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+No file outline2.aux.
+\openout1 = `outline2.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+(/usr/local/texlive/2011/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count88
+\scratchdimen=\dimen105
+\scratchbox=\box26
+\nofMPsegments=\count89
+\nofMParguments=\count90
+\everyMPshowfont=\toks15
+\MPscratchCnt=\count91
+\MPscratchDim=\dimen106
+\MPnumerator=\count92
+\makeMPintoPDFobject=\count93
+\everyMPtoPDFconversion=\toks16
+) (/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Managing graphics extensions (HO)
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Defining keys (HO)
+))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2011/04/07 v1.13 Key value parser (HO)
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 61.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 61.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 61.
+
+[1
+
+{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2] [3] [4] <params.pdf, id=23, 443.6575pt x 358.33875pt>
+File: params.pdf Graphic file (type pdf)
+ <use params.pdf>
+Package pdftex.def Info: params.pdf used on input line 162.
+(pdftex.def)             Requested size: 289.07999pt x 233.48607pt.
+
+[5 <./params.pdf>]
+
+LaTeX Warning: Reference `fig:linearity-and-variability' on page 6 undefined on
+ input line 188.
+
+[6] <linearity-and-variability.pdf, id=89, 623.32875pt x 226.8475pt>
+File: linearity-and-variability.pdf Graphic file (type pdf)
+
+<use linearity-and-variability.pdf>
+Package pdftex.def Info: linearity-and-variability.pdf used on input line 192.
+(pdftex.def)             Requested size: 361.34999pt x 131.50586pt.
+
+
+LaTeX Warning: Reference `fig:theory-limits' on page 7 undefined on input line 
+204.
+
+<theory-limits.pdf, id=90, 425.59pt x 326.21875pt>
+File: theory-limits.pdf Graphic file (type pdf)
+ <use theory-limits.pdf>
+Package pdftex.def Info: theory-limits.pdf used on input line 208.
+(pdftex.def)             Requested size: 216.81pt x 166.19016pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `fig:TvsRh' on page 7 undefined on input line 214.
+
+[7 <./linearity-and-variability.pdf>]
+<TvsRh.pdf, id=107, 845.1575pt x 312.16624pt>
+File: TvsRh.pdf Graphic file (type pdf)
+ <use TvsRh.pdf>
+Package pdftex.def Info: TvsRh.pdf used on input line 218.
+(pdftex.def)             Requested size: 361.34999pt x 133.4715pt.
+ [8 <./theory-limits.pdf> <./TvsRh.pdf>] <linearity.pdf, id=133, 408.61082pt x 
+324.60371pt>
+File: linearity.pdf Graphic file (type pdf)
+
+<use linearity.pdf>
+Package pdftex.def Info: linearity.pdf used on input line 236.
+(pdftex.def)             Requested size: 216.81pt x 172.23232pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<nonlinearity.pdf, id=134, 407.2667pt x 332.66835pt>
+File: nonlinearity.pdf Graphic file (type pdf)
+ <use nonlinearity.pdf>
+Package pdftex.def Info: nonlinearity.pdf used on input line 244.
+(pdftex.def)             Requested size: 216.81pt x 177.0951pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `fig:linear-predict' on page 9 undefined on input line
+ 250.
+
+
+Overfull \hbox (1.31306pt too wide) in paragraph at lines 250--251
+\OT1/cmr/m/n/12 The com-par-i-son lead-ing to the clear-est in-ter-pre-ta-tion 
+was be-tween rods with a re-duc-tion in rhodopsin
+ []
+
+
+LaTeX Warning: Reference `eq:linear-trans' on page 9 undefined on input line 25
+2.
+
+[9]
+
+LaTeX Warning: Reference `fig:linear-predict' on page 10 undefined on input lin
+e 254.
+
+
+LaTeX Warning: Reference `fig:linear-predict' on page 10 undefined on input lin
+e 256.
+
+[10 <./linearity.pdf>]
+
+LaTeX Warning: Reference `fig:nonlinear-predict' on page 11 undefined on input 
+line 258.
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 268.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 268.
+ [11 <./nonlinearity.pdf>] <likelihood_wt.pdf, id=185, 612.26146pt x 180.7834pt
+>
+File: likelihood_wt.pdf Graphic file (type pdf)
+
+<use likelihood_wt.pdf>
+Package pdftex.def Info: likelihood_wt.pdf used on input line 288.
+(pdftex.def)             Requested size: 433.62pt x 128.03712pt.
+
+<likelihoodcuts.pdf, id=186, 910.40125pt x 229.85875pt>
+File: likelihoodcuts.pdf Graphic file (type pdf)
+
+<use likelihoodcuts.pdf>
+Package pdftex.def Info: likelihoodcuts.pdf used on input line 296.
+(pdftex.def)             Requested size: 433.62pt x 109.48215pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `fig:likelihood' on page 12 undefined on input line 30
+2.
+
+
+LaTeX Warning: Reference `fig:likelihoodcuts' on page 12 undefined on input lin
+e 302.
+
+[12 <./likelihood_wt.pdf>]
+
+LaTeX Warning: Reference `fig:GCAPlikelihood' on page 13 undefined on input lin
+e 304.
+
+
+LaTeX Warning: Reference `fig:linearity-and-variability' on page 13 undefined o
+n input line 306.
+
+<GCAPlikelihood.pdf, id=200, 612.26146pt x 188.84804pt>
+File: GCAPlikelihood.pdf Graphic file (type pdf)
+
+<use GCAPlikelihood.pdf>
+Package pdftex.def Info: GCAPlikelihood.pdf used on input line 310.
+(pdftex.def)             Requested size: 433.62pt x 133.74876pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<GCAPlikelihoodcuts.pdf, id=201, 734.745pt x 188.705pt>
+File: GCAPlikelihoodcuts.pdf Graphic file (type pdf)
+
+<use GCAPlikelihoodcuts.pdf>
+Package pdftex.def Info: GCAPlikelihoodcuts.pdf used on input line 318.
+(pdftex.def)             Requested size: 433.62pt x 111.36952pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `fig:TrCompression' on page 13 undefined on input line
+ 324.
+
+
+LaTeX Warning: Reference `fig:linearity and variability' on page 13 undefined o
+n input line 324.
+
+
+LaTeX Warning: Reference `fig:TvsRh' on page 13 undefined on input line 324.
+
+[13 <./likelihoodcuts.pdf>]
+<TrCompression.pdf, id=218, 495.8525pt x 162.6075pt>
+File: TrCompression.pdf Graphic file (type pdf)
+ <use TrCompression.pdf>
+Package pdftex.def Info: TrCompression.pdf used on input line 328.
+(pdftex.def)             Requested size: 433.62pt x 142.19933pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `fig:linear-predict' on page 14 undefined on input lin
+e 336.
+
+
+LaTeX Warning: Reference `fig:TCompressCSM' on page 14 undefined on input line 
+336.
+
+
+LaTeX Warning: Reference `fig:TrCompression' on page 14 undefined on input line
+ 336.
+
+[14 <./GCAPlikelihood.pdf> <./GCAPlikelihoodcuts.pdf>]
+<TCompressCSM.pdf, id=244, 319.89934pt x 256.72592pt>
+File: TCompressCSM.pdf Graphic file (type pdf)
+ <use TCompressCSM.pdf>
+Package pdftex.def Info: TCompressCSM.pdf used on input line 340.
+(pdftex.def)             Requested size: 180.67499pt x 144.99557pt.
+
+[15 <./TrCompression.pdf> <./TCompressCSM.pdf>]
+<repro_zoo.pdf, id=277, 794.97pt x 614.295pt>
+File: repro_zoo.pdf Graphic file (type pdf)
+ <use repro_zoo.pdf>
+Package pdftex.def Info: repro_zoo.pdf used on input line 359.
+(pdftex.def)             Requested size: 433.62pt x 335.07939pt.
+
+
+LaTeX Warning: Reference `fig:repro_zoo' on page 16 undefined on input line 365
+.
+
+[16 <./repro_zoo.pdf>]
+<GCAPKOFullKinetics.pdf, id=305, 412.6431pt x 325.27571pt>
+File: GCAPKOFullKinetics.pdf Graphic file (type pdf)
+
+<use GCAPKOFullKinetics.pdf>
+Package pdftex.def Info: GCAPKOFullKinetics.pdf used on input line 395.
+(pdftex.def)             Requested size: 216.81pt x 170.90134pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<GCAPKOKinetics.pdf, id=306, 399.20198pt x 336.70059pt>
+File: GCAPKOKinetics.pdf Graphic file (type pdf)
+
+<use GCAPKOKinetics.pdf>
+Package pdftex.def Info: GCAPKOKinetics.pdf used on input line 403.
+(pdftex.def)             Requested size: 216.81pt x 182.86882pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<decay-shape.pdf, id=307, 418.6917pt x 346.10947pt>
+File: decay-shape.pdf Graphic file (type pdf)
+ <use decay-shape.pdf>
+Package pdftex.def Info: decay-shape.pdf used on input line 411.
+(pdftex.def)             Requested size: 216.81pt x 179.22273pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<decay-var-width.pdf, id=308, 415.3314pt x 340.73297pt>
+File: decay-var-width.pdf Graphic file (type pdf)
+
+<use decay-var-width.pdf>
+Package pdftex.def Info: decay-var-width.pdf used on input line 419.
+(pdftex.def)             Requested size: 216.81pt x 177.86844pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<wt-delta1.pdf, id=309, 405.92256pt x 329.98012pt>
+File: wt-delta1.pdf Graphic file (type pdf)
+ <use wt-delta1.pdf>
+Package pdftex.def Info: wt-delta1.pdf used on input line 427.
+(pdftex.def)             Requested size: 216.81pt x 176.25313pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<wt-delta0.pdf, id=310, 426.08434pt x 327.29185pt>
+File: wt-delta0.pdf Graphic file (type pdf)
+ <use wt-delta0.pdf>
+Package pdftex.def Info: wt-delta0.pdf used on input line 435.
+(pdftex.def)             Requested size: 216.81pt x 166.54207pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `fig:GCAPFull' on page 17 undefined on input line 443.
+
+
+
+LaTeX Warning: Reference `fig:repro_zoo' on page 17 undefined on input line 443
+.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 445.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 445.
+[17]
+
+LaTeX Warning: Reference `fig:GCAPFull' on page 18 undefined on input line 453.
+
+
+
+LaTeX Warning: Reference `fig:GCAP' on page 18 undefined on input line 453.
+
+[18 <./GCAPKOFullKinetics.pdf> <./GCAPKOKinetics.pdf>]
+
+LaTeX Warning: Reference `fig:decay-shape' on page 19 undefined on input line 4
+67.
+
+
+LaTeX Warning: Reference `fig:delta1' on page 19 undefined on input line 467.
+
+
+LaTeX Warning: Reference `fig:delta0' on page 19 undefined on input line 467.
+
+
+LaTeX Warning: Reference `fig:transducin' on page 19 undefined on input line 47
+1.
+
+[19 <./decay-shape.pdf>] <transducin.pdf, id=370, 347.45357pt x 321.24347pt>
+File: transducin.pdf Graphic file (type pdf)
+
+<use transducin.pdf>
+Package pdftex.def Info: transducin.pdf used on input line 477.
+(pdftex.def)             Requested size: 216.81pt x 200.46295pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[20 <./decay-var-width.pdf>] [21 <./wt-delta1.pdf> <./wt-delta0.pdf>] [22 <./tr
+ansducin.pdf>] [23] [24]
+Overfull \hbox (9.27492pt too wide) in paragraph at lines 614--615
+[]\OT1/cmr/m/n/12 response vari-abil-ity in GCAP$[]$(also GCAP$[]$?) rods --- e
+m-pir-i-cal re-sults for CV$[]$  and
+ []
+
+[25] [26] (./outline2.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1621 strings out of 493633
+ 23771 string characters out of 3143378
+ 79265 words of memory out of 3000000
+ 4912 multiletter control sequences out of 15000+200000
+ 8509 words of font info for 30 fonts, out of 3000000 for 9000
+ 831 hyphenation exceptions out of 8191
+ 37i,5n,23p,1497b,257s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
+usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
+local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
+cal/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local
+/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/te
+xlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texli
+ve/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
+e/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on outline2.pdf (26 pages, 699573 bytes).
+PDF statistics:
+ 459 PDF objects out of 1000 (max. 8388607)
+ 331 compressed objects within 4 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+
