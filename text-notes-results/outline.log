@@ -1,0 +1,273 @@
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2007.5.18)  9 SEP 2011 22:39
+entering extended mode
+\write18 enabled.
+ %&-line parsing enabled.
+**outline.tex
+(./outline.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, arabic, basque, bulgarian, coptic, welsh, czech, slovak, german, ng
+erman, danish, esperanto, spanish, catalan, galician, estonian, farsi, finnish,
+ french, greek, monogreek, ancientgreek, croatian, hungarian, interlingua, ibyc
+us, indonesian, icelandic, italian, latin, mongolian, dutch, norsk, polish, por
+tuguese, pinyin, romanian, russian, slovenian, uppersorbian, serbian, swedish, 
+turkish, ukenglish, ukrainian, loaded.
+(/usr/local/texlive/2007/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
+(/usr/local/texlive/2007/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2007/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2007/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2007/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2007/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2007/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 90.
+
+(/usr/local/texlive/2007/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2007/01/08 v0.04d Graphics/color for pdfTeX
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(./outline.aux
+
+LaTeX Warning: Label `fig:decay-shape' multiply defined.
+
+)
+\openout1 = `outline.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+ (/usr/local/texlive/2007/texmf-dist/tex/context/base/supp-pdf.tex
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count88
+\scratchdimen=\dimen105
+\scratchbox=\box26
+\nofMPsegments=\count89
+\nofMParguments=\count90
+\MPscratchCnt=\count91
+\MPscratchDim=\dimen106
+\MPnumerator=\count92
+\everyMPtoPDFconversion=\toks15
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 59.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 59.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 59.
+ [1
+
+{/usr/local/texlive/2007/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2] [3] [4] [5] [6]
+<linearity-and-variability.pdf, id=29, 623.32875pt x 226.8475pt>
+File: linearity-and-variability.pdf Graphic file (type pdf)
+
+<use linearity-and-variability.pdf> [7 <./linearity-and-variability.pdf>]
+<theory-limits.pdf, id=47, 425.59pt x 326.21875pt>
+File: theory-limits.pdf Graphic file (type pdf)
+ <use theory-limits.pdf>
+<TvsRh.pdf, id=48, 845.1575pt x 312.16624pt>
+File: TvsRh.pdf Graphic file (type pdf)
+ <use TvsRh.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[8 <./theory-limits.pdf>] <linearity.pdf, id=66, 408.61082pt x 324.60371pt>
+File: linearity.pdf Graphic file (type pdf)
+
+<use linearity.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<nonlinearity.pdf, id=67, 407.2667pt x 332.66835pt>
+File: nonlinearity.pdf Graphic file (type pdf)
+ <use nonlinearity.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (1.31306pt too wide) in paragraph at lines 262--263
+\OT1/cmr/m/n/12 The com-par-i-son lead-ing to the clear-est in-ter-pre-ta-tion 
+was be-tween rods with a re-duc-tion in rhodopsin
+ []
+
+[9 <./TvsRh.pdf>] [10 <./linearity.pdf>] [11 <./nonlinearity.pdf>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 280.
+
+
+(/usr/local/texlive/2007/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 280.
+
+<likelihood_wt.pdf, id=129, 612.26146pt x 180.7834pt>
+File: likelihood_wt.pdf Graphic file (type pdf)
+ <use likelihood_wt.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<likelihoodcuts.pdf, id=130, 910.40125pt x 229.85875pt>
+File: likelihoodcuts.pdf Graphic file (type pdf)
+
+<use likelihoodcuts.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[12] [13 <./likelihood_wt.pdf> <./likelihoodcuts.pdf>]
+<GCAPlikelihood.pdf, id=162, 612.26146pt x 188.84804pt>
+File: GCAPlikelihood.pdf Graphic file (type pdf)
+
+<use GCAPlikelihood.pdf>
+<GCAPlikelihoodcuts.pdf, id=163, 734.745pt x 188.705pt>
+File: GCAPlikelihoodcuts.pdf Graphic file (type pdf)
+
+<use GCAPlikelihoodcuts.pdf>
+
+LaTeX Warning: Reference `fig:linearity and variability' on page 14 undefined o
+n input line 336.
+
+[14 <./GCAPlikelihood.pdf> <./GCAPlikelihoodcuts.pdf>]
+<TrCompression.pdf, id=191, 495.8525pt x 162.6075pt>
+File: TrCompression.pdf Graphic file (type pdf)
+ <use TrCompression.pdf>
+<TCompressCSM.pdf, id=192, 303.7699pt x 267.47879pt>
+File: TCompressCSM.pdf Graphic file (type pdf)
+ <use TCompressCSM.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[15 <./TrCompression.pdf>] <repro_zoo.pdf, id=209, 794.97pt x 614.295pt>
+File: repro_zoo.pdf Graphic file (type pdf)
+
+<use repro_zoo.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[16 <./TCompressCSM.pdf>]
+<GCAPKOFullKinetics.pdf, id=231, 412.6431pt x 325.27571pt>
+File: GCAPKOFullKinetics.pdf Graphic file (type pdf)
+
+<use GCAPKOFullKinetics.pdf>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<GCAPKOKinetics.pdf, id=232, 399.20198pt x 336.70059pt>
+File: GCAPKOKinetics.pdf Graphic file (type pdf)
+
+<use GCAPKOKinetics.pdf>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<decay-shape.pdf, id=233, 418.6917pt x 346.10947pt>
+File: decay-shape.pdf Graphic file (type pdf)
+ <use decay-shape.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<decay-var-width.pdf, id=234, 415.3314pt x 340.73297pt>
+File: decay-var-width.pdf Graphic file (type pdf)
+
+<use decay-var-width.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<wt-delta1.pdf, id=235, 405.92256pt x 329.98012pt>
+File: wt-delta1.pdf Graphic file (type pdf)
+ <use wt-delta1.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<wt-delta0.pdf, id=236, 426.08434pt x 327.29185pt>
+File: wt-delta0.pdf Graphic file (type pdf)
+ <use wt-delta0.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[17 <./repro_zoo.pdf>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 457.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 457.
+ [18 <./GCAPKOFullKinetics.pdf> <./GCAPKOKinetics.pdf>]
+[19 <./decay-shape.pdf>] <transducin.pdf, id=323, 347.45357pt x 321.24347pt>
+File: transducin.pdf Graphic file (type pdf)
+
+<use transducin.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[20 <./decay-var-width.pdf>] [21 <./wt-delta1.pdf> <./wt-delta0.pdf>] [22 <./tr
+ansducin.pdf>] [23] [24]
+Overfull \hbox (9.27492pt too wide) in paragraph at lines 626--627
+[]\OT1/cmr/m/n/12 response vari-abil-ity in GCAP$[]$(also GCAP$[]$?) rods --- e
+m-pir-i-cal re-sults for CV$[]$  and
+ []
+
+[25] [26] (./outline.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1033 strings out of 94073
+ 13735 string characters out of 1162984
+ 60803 words of memory out of 1500000
+ 4347 multiletter control sequences out of 10000+50000
+ 8509 words of font info for 30 fonts, out of 1200000 for 2000
+ 645 hyphenation exceptions out of 8191
+ 25i,5n,21p,1496b,243s stack positions out of 5000i,500n,6000p,200000b,5000s
+</usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmbx12.pfb></usr/l
+ocal/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmex10.pfb></usr/local/texl
+ive/2007/texmf-dist/fonts/type1/bluesky/cm/cmmi10.pfb></usr/local/texlive/2007/
+texmf-dist/fonts/type1/bluesky/cm/cmmi12.pfb></usr/local/texlive/2007/texmf-dis
+t/fonts/type1/bluesky/cm/cmmi8.pfb></usr/local/texlive/2007/texmf-dist/fonts/ty
+pe1/bluesky/cm/cmr12.pfb></usr/local/texlive/2007/texmf-dist/fonts/type1/bluesk
+y/cm/cmr6.pfb></usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmr8.p
+fb></usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmsy10.pfb></usr/
+local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmsy8.pfb>
+Output written on outline.pdf (26 pages, 539196 bytes).
+PDF statistics:
+ 413 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 131072)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+
