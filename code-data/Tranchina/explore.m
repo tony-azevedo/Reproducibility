@@ -1,4 +1,4 @@
-%%
+%
 % get mean single photon response right
 % time to peak should be 200-210 ms.
 %rod_diffusion_PDE_WT(3, 7, 0.8, 0.2, 1, 1) % steep dependence on RK rate
