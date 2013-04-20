@@ -19,25 +19,31 @@ randexamples = randi(NumResponses,numexamples,1);
 randexamples = unique(randexamples);
 ReturnedCondition.RhExamples = zeros(length(randexamples),Condition.EpochPts);
 ReturnedCondition.IExamples = zeros(length(randexamples),Condition.EpochPts);
-if (~isempty(Filter))
-    filtFFT = fft(Filter);
-end
-
-% convolve rhodopsin time course with linear filter to generate modeled
-% response
-if isempty(Filter)
-    % Ifft the mean stochastic aspect of the SimFunc
-    filtFFT = fft(ReturnedCondition.Resp) ./ fft(ReturnedCondition.MeanStochTimeCourse);
-    filtFFT(ReturnedCondition.FreqCutoff+1:length(filtFFT)-ReturnedCondition.FreqCutoff) = 0;
-    ReturnedCondition.Filter = real(ifft(filtFFT));
-else
-    ReturnedCondition.Filter = Filter;
-end
 
 % generate series of responses
 for resp = 1:NumResponses
 
-    RhTimeCourse = RhTrajectoryGenerator(Condition);
+	% initial settings for rhodopsin activity
+	RhTimeCourse(1:Condition.EpochPts) = 0;
+    CurrentStep = 0;
+    CurrentCatalyticActivity = 1;
+    ShutoffRate = Condition.InitialShutoffRate;
+    
+    % for each time point decide whether shutoff reaction has occurred.
+    % if it has, update catalytic activity and shutoff rate.
+    for cnt=1:Condition.EpochPts
+        RhTimeCourse(cnt) = CurrentCatalyticActivity;
+        % generate random number between 0 and 1 (uniform dist) and compare to shutoff rate
+        if (rand(1) < ShutoffRate)
+            ShutoffRate = Condition.InitialShutoffRate * (1 - CurrentStep * Condition.RhDecayFact / Condition.RhSteps);
+            CurrentStep = CurrentStep + 1;
+            CurrentCatalyticActivity = 1 - CurrentStep * Condition.RhDecayFact / Condition.RhSteps;
+        end
+        % are we done yet?
+        if (CurrentStep == Condition.RhSteps)
+            break;
+        end
+    end
 
     % compress rhodopsin activity if desired  
     if (Condition.RhodopsinCompression > 0)
@@ -53,8 +59,23 @@ for resp = 1:NumResponses
             ReturnedCondition.RhExamples(find(resp==randexamples),:) = RhTimeCourse;
         end
     end
-    
-    ReturnedCondition.EpochData(resp, :) = real(ifft(fft(RhTimeCourse) .* filtFFT));
+end
+
+ReturnedCondition.MeanStochTimeCourse = Condition.MeanRhTimeCourse / NumResponses;
+
+% convolve rhodopsin time course with linear filter to generate modeled
+% response
+if isempty(Filter)
+    % Ifft the mean stochastic aspect of the SimFunc
+    filtFFT = fft(ReturnedCondition.Resp) ./ fft(ReturnedCondition.MeanStochTimeCourse);
+    filtFFT(ReturnedCondition.FreqCutoff+1:length(filtFFT)-ReturnedCondition.FreqCutoff) = 0;
+    ReturnedCondition.Filter = real(ifft(filtFFT));
+else
+    ReturnedCondition.Filter = Filter;
+end
+
+for resp = 1:NumResponses
+    ReturnedCondition.EpochData(resp, :) = real(ifft(ReturnedCondition.EpochData(resp, :) .* filtFFT));
     % compress if desired
     if (Condition.ResponseCompression > 0)
         ReturnedCondition.EpochData(resp, :) = (1-exp(-ReturnedCondition.EpochData(resp, :)*Condition.ResponseCompression))/Condition.ResponseCompression;
@@ -62,10 +83,7 @@ for resp = 1:NumResponses
     if sum(resp == randexamples)
         ReturnedCondition.IExamples(find(resp==randexamples),:) = ReturnedCondition.EpochData(resp, :);
     end
-    
 end
-
-ReturnedCondition.MeanStochTimeCourse = Condition.MeanRhTimeCourse / NumResponses;
 
 [Peakamp, PeakTime] = max(mean(ReturnedCondition.EpochData));
 ReturnedCondition.time = (1:ReturnedCondition.EpochPts)*ReturnedCondition.NumPtsToPeak/PeakTime;

@@ -141,7 +141,7 @@ U=C;
 %-------------------------
 RhCondition.EpochPts = nt;
 RhCondition.InitialShutoffRate = InitialShutoffRate*dt;
-RhCondition.RhSteps = NumSteps;
+RhCondition.NumSteps = NumSteps;
 RhCondition.RhDecayFact = DecayFact;
 RhCondition.GainFact = GainFact;
 RhCondition.Verbose = 0;
@@ -265,9 +265,9 @@ Ihat_mat=zeros(nsim,nt);%matrix of normalized photocurrents
 tb=cputime;
 
 % simulate each response
+tic
 
 for ksim=1:nsim
-
     if (mod(ksim, 5) == 0)
         fprintf(1, '.');
         pause(0.1);
@@ -283,7 +283,7 @@ for ksim=1:nsim
     %nuRP=nuRPfactor*nu_R_PDE_random_caruso(t,nu_RG,kRK,nu_Arr,np);%slow random caruso mod
     if (DeterministicModel)
         nuRP = zeros(1, RhCondition.EpochPts);
-        for epoch = 1:400
+        for epoch = 1:100
             nuRP = nuRP + RhTrajectoryGenerator(RhCondition);
         end
     else
@@ -293,7 +293,7 @@ for ksim=1:nsim
     %nuRP=1.4*14*nu_R_PDE_caruso(t,nu_RG,kRK,nu_Arr,np);%slow determ caruso mod
     
     g_vec=ones(n,1); %w/o feedback
-
+    
     % step across time
     for j=2:nt
         PR(:,j)=BPr\(PR(:,j-1) + dt*nuRP(j)*nuPR_vec);
@@ -314,7 +314,7 @@ for ksim=1:nsim
         g_vec=( 1+(1/y_star)^m_Ca )./( 1+(Y(:,j)/y_star).^m_Ca ); % w feedback
         C(:,j)=B\( C(:,j-1) + dt*b_vec.*g_vec );
     end
-    
+
     CR=C(1:nr,:); %cGMP conc as function of r (rows) and t (columns)
     cr0=CR(1,:); %%cGMP conc at r=0 in active compartment
     CD=C((nr+1):n,:);%cGMP conc as function of compartment postition x (rows) and t (columns)
@@ -327,6 +327,7 @@ for ksim=1:nsim
     Ihat_mat(ksim,:)=Ihat;
 
 end % for simulations, indexed by ksim
+toc
 tc=cputime-tb
 
 if (DeterministicModel)

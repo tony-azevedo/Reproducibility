@@ -65,10 +65,17 @@
 %Results_03 = rod_diffusion_PDE_WT(300, 7, 0.75, 0.45, 1) % steep dependence on RK rate
 
 %%
+%Results_03 = rod_diffusion_PDE_WT(300, 7, 0.4, 0.2, 1) % steep dependence on RK rate
+%Results_03 = rod_diffusion_PDE_WT(300, 7, 0.6, 0.2, 1) % steep dependence on RK rate
+%Results_03 = rod_diffusion_PDE_WT(300, 7, 0.8, 0.2, 1) % steep dependence on RK rate
 
-Results_1 = rod_diffusion_PDE_WT(100, 7, 20, 1, 1, 0, 1) % steep dependence on RK rate ***
-Results_2 = rod_diffusion_PDE_WT(100, 7, 25, 1, 1, 0, 1) % steep dependence on RK rate
-Results_3 = rod_diffusion_PDE_WT(100, 7, 30, 1, 1, 0, 1) % steep dependence on RK rate
+
+%Results_03 = rod_diffusion_PDE_WT(3, 7, 0.8, 0.2, 1) % steep dependence on RK rate
+
+
+%Results_1 = rod_diffusion_PDE_WT(300, 7, 30, 1, 1, 0, 1) % steep dependence on RK rate ***
+%Results_2 = rod_diffusion_PDE_WT(300, 7, 50, 1, 1, 0, 1) % steep dependence on RK rate
+%Results_3 = rod_diffusion_PDE_WT(300, 7, 70, 1, 1, 0, 1) % steep dependence on RK rate
 
 %Results_4 = rod_diffusion_PDE_WT(300, 7, 50, 0, 1, 0, 1) % steep dependence on RK rate
 %Results_5 = rod_diffusion_PDE_WT(300, 7, 50, 0.2, 1, 0, 1) % steep dependence on RK rate
@@ -79,7 +86,3 @@ Results_3 = rod_diffusion_PDE_WT(100, 7, 30, 1, 1, 0, 1) % steep dependence on R
 %Results_1 = rod_diffusion_PDE_WT(300, 7, 20, 1, 1, 0, 1) % 
 %Results_2 = rod_diffusion_PDE_WT(300, 7, 30, 1, 3, 0, 1) % 
 %Results_3 = rod_diffusion_PDE_WT(300, 7, 30, 1, 10, 0, 1) %  **
-
-%%
-
-Results_1 = rod_diffusion_PDE_WT(5, 7, 20, 1, 1, 0, 1) % steep dependence on RK rate ***

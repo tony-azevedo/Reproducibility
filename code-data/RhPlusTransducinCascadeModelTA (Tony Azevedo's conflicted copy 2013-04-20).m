@@ -29,7 +29,27 @@ end
 
 if (Condition.DeterministicRhModel)
     for resp = 1:NumResponses
-        RhTimeCourse = RhTrajectoryGenerator(Condition);
+        % initial settings for rhodopsin activity
+        RhTimeCourse(1:Condition.EpochPts) = 0;
+        CurrentStep = 0;
+        CurrentCatalyticActivity = 1;
+        ShutoffRate = Condition.InitialShutoffRate;
+
+        % for each time point decide whether shutoff reaction has occurred.
+        % if it has, update catalytic activity and shutoff rate.
+        for cnt=1:Condition.EpochPts
+            RhTimeCourse(cnt) = CurrentCatalyticActivity;
+            % generate random number between 0 and 1 (uniform dist) and compare to shutoff rate
+            if (rand(1) < ShutoffRate)
+                ShutoffRate = Condition.InitialShutoffRate * (1 - CurrentStep * Condition.RhDecayFact / Condition.RhSteps);
+                CurrentStep = CurrentStep + 1;
+                CurrentCatalyticActivity = 1 - CurrentStep * Condition.RhDecayFact / Condition.RhSteps;
+            end
+            % are we done yet?
+            if (CurrentStep == Condition.RhSteps)
+                break;
+            end
+        end	
         if (resp == 1)
             MeanRhTimeCourse = RhTimeCourse;
         else
@@ -58,7 +78,6 @@ if (Condition.DeterministicRhModel && Condition.DeterministicTrModel)
 	% convolve transducin time course with linear filter to generate modeled response
 	TransducinActivity = fft(TransducinActivity);
     ReturnedCondition.EpochData = real(ifft(TransducinActivity .* filt));
-
 else
 
     numexamples = floor(log2(NumResponses));
@@ -74,7 +93,47 @@ else
     %tic
     % generate series of responses
     for resp = 1:NumResponses
-        RhTimeCourse = RhTrajectoryGenerator(Condition);
+        
+        % initial settings for rhodopsin activity
+        RhTimeCourse(1:Condition.EpochPts) = 0;
+        TransducinActivity(1:Condition.EpochPts) = 0;
+        CurrentStep = 0;
+        CurrentCatalyticActivity = 1;
+        ShutoffRate = Condition.InitialShutoffRate;
+        TransCount = 0;
+        
+        % for each time point decide whether shutoff reaction has occurred.
+        % if it has, update catalytic activity and shutoff rate.
+        for cnt=1:Condition.EpochPts
+            if (Condition.DeterministicRhModel)
+                CurrentCatalyticActivity = MeanRhTimeCourse(cnt);
+            end
+            % did we activate transducin in this time step?
+            RhTimeCourse(cnt) = CurrentCatalyticActivity;
+            if (Condition.DeterministicTrModel == 0)
+                if (rand(1) < (CurrentCatalyticActivity * Condition.BaseTransRate))
+                    TransducinLifetime = round(exprnd(Condition.TransDecayTimeConst));
+                    if ( (cnt + TransducinLifetime) < Condition.EpochPts)
+                        TransducinActivity(cnt:cnt+TransducinLifetime) = TransducinActivity(cnt:cnt+TransducinLifetime) + 1;
+                    else
+                        TransducinActivity(cnt:Condition.EpochPts) = TransducinActivity(cnt:Condition.EpochPts) + 1;
+                    end
+                    TransCount = TransCount + 1;
+                end
+            end
+            % generate random number between 0 and 1 (uniform dist) and compare to shutoff rate
+            if (Condition.DeterministicRhModel == 0)
+                if (rand(1) < ShutoffRate)
+                    ShutoffRate = Condition.InitialShutoffRate * (1 - CurrentStep * Condition.RhDecayFact / Condition.RhSteps);
+                    CurrentStep = CurrentStep + 1;
+                    CurrentCatalyticActivity = 1 - CurrentStep * Condition.RhDecayFact / Condition.RhSteps;
+                end
+                % are we done yet?
+                if (CurrentStep == Condition.RhSteps)
+                    break;
+                end
+            end
+        end
         
         % generate transductin activity if not stochastic
         if (Condition.DeterministicTrModel)

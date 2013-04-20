@@ -20,33 +20,16 @@ TrFilt(1:Condition.EpochPts) = 0;
 tme = 1:Condition.EpochPts;
 TrFilt = exp(-tme / Condition.TransDecayTimeConst);
 TrFilt = TrFilt / sum(TrFilt);
-TrFilt = fft(TrFilt);
 
-ReturnedCondition.EpochData= ones(NumResponses, Condition.EpochPts);
+if (Condition.ConvFlag == 0)
+    TrFilt = fft(TrFilt);
+end
+
+ReturnedCondition.EpochData = ones(NumResponses, Condition.EpochPts);
 
 if (Condition.DeterministicRhModel)
     for resp = 1:NumResponses
-        % initial settings for rhodopsin activity
-        RhTimeCourse(1:Condition.EpochPts) = 0;
-        CurrentStep = 0;
-        CurrentCatalyticActivity = 1;
-        ShutoffRate = Condition.InitialShutoffRate;
-
-        % for each time point decide whether shutoff reaction has occurred.
-        % if it has, update catalytic activity and shutoff rate.
-        for cnt=1:Condition.EpochPts
-            RhTimeCourse(cnt) = CurrentCatalyticActivity;
-            % generate random number between 0 and 1 (uniform dist) and compare to shutoff rate
-            if (rand(1) < ShutoffRate)
-                ShutoffRate = Condition.InitialShutoffRate * (1 - CurrentStep * Condition.RhDecayFact / Condition.NumSteps);
-                CurrentCatalyticActivity = 1 - CurrentStep * Condition.RhDecayFact / Condition.NumSteps;
-                CurrentStep = CurrentStep + 1;
-            end
-            % are we done yet?
-            if (CurrentStep == Condition.NumSteps)
-                break;
-            end
-        end	
+        RhTimeCourse = RhTrajectoryGenerator(Condition);
         if (resp == 1)
             MeanRhTimeCourse = RhTimeCourse;
         else
@@ -58,10 +41,15 @@ if (Condition.DeterministicRhModel)
 end
 
 if (Condition.DeterministicRhModel && Condition.DeterministicTrModel)
-   
-    temp = conv(TrFilt, MeanRhTimeCourse, 'full');
-    TransducinActivity = temp(1:Condition.EpochPts);
-    
+
+    if (Condition.ConvFlag)
+        temp = conv(TrFilt, MeanRhTimeCourse, 'full');
+        TransducinActivity = temp(1:Condition.EpochPts);
+    else
+        RhTimeCourse = fft(RhTimeCourse);
+        TransducinActivity = real(ifft(RhTimeCourse .* TrFilt));
+    end
+
     % compress transducin activity if desired
     if (Condition.TransCompression > 0)
         TransducinActivity = TransducinActivity ./ (1 + Condition.TransCompression * cumsum(TransducinActivity));
@@ -73,59 +61,56 @@ if (Condition.DeterministicRhModel && Condition.DeterministicTrModel)
     ReturnedCondition.MeanTrTimeCourse = TransducinActivity;
             
 	% convolve transducin time course with linear filter to generate modeled response
-	TransducinActivity = fft(TransducinActivity);
-    ReturnedCondition.EpochData = real(ifft(TransducinActivity .* filt));
+	if (Condition.ConvFlag)
+        temp = conv(TransducinActivity, Filter, 'full');
+        ReturnedCondition.EpochData = temp(1:Condition.EpochPts);
+    else
+        TransducinActivity = fft(TransducinActivity);
+        ReturnedCondition.EpochData = real(ifft(TransducinActivity .* filt));
+    end
+    
 else
+    
     % generate series of responses
     for resp = 1:NumResponses
 
-        % initial settings for rhodopsin activity
-        RhTimeCourse(1:Condition.EpochPts) = 0;
+        RhTimeCourse = RhTrajectoryGenerator(Condition);
         TransducinActivity(1:Condition.EpochPts) = 0;
         CurrentStep = 0;
         CurrentCatalyticActivity = 1;
-        ShutoffRate = Condition.InitialShutoffRate;
         TransCount = 0;
 
         % for each time point decide whether shutoff reaction has occurred.
         % if it has, update catalytic activity and shutoff rate.
-        for cnt=1:Condition.EpochPts
+        if (Condition.DeterministicTrModel == 0)
             if (Condition.DeterministicRhModel)
-                CurrentCatalyticActivity = MeanRhTimeCourse(cnt);           
+                TransGenerator = rand(1, Condition.EpochPts) ./ (MeanRhTimeCourse * Condition.BaseTransRate);           
+            else
+                TransGenerator = rand(1, Condition.EpochPts) ./ (RhTimeCourse * Condition.BaseTransRate);           
             end
-            % did we activate transducin in this time step?
-            RhTimeCourse(cnt) = CurrentCatalyticActivity;
-            if (Condition.DeterministicTrModel == 0)
-                if (rand(1) < (CurrentCatalyticActivity * Condition.BaseTransRate))
-                    TransducinLifetime = round(exprnd(Condition.TransDecayTimeConst));
-                    if ( (cnt + TransducinLifetime) < Condition.EpochPts)
-                        TransducinActivity(cnt:cnt+TransducinLifetime) = TransducinActivity(cnt:cnt+TransducinLifetime) + 1;
-                    else
-                        TransducinActivity(cnt:Condition.EpochPts) = TransducinActivity(cnt:Condition.EpochPts) + 1;
-                    end
-                    TransCount = TransCount + 1;
+            TransIndices = find(TransGenerator < 1);
+            
+            for cnt=1:length(TransIndices)
+
+                TransducinLifetime = round(exprnd(Condition.TransDecayTimeConst));
+                if ( (TransIndices(cnt) + TransducinLifetime) < Condition.EpochPts)
+                    TransducinActivity(TransIndices(cnt):TransIndices(cnt)+TransducinLifetime) = TransducinActivity(TransIndices(cnt):TransIndices(cnt)+TransducinLifetime) + 1;
+                else
+                    TransducinActivity(TransIndices(cnt):Condition.EpochPts) = TransducinActivity(TransIndices(cnt):Condition.EpochPts) + 1;
                 end
-            end
-            % generate random number between 0 and 1 (uniform dist) and compare to shutoff rate
-            if (Condition.DeterministicRhModel == 0)
-                if (rand(1) < ShutoffRate)
-                    ShutoffRate = Condition.InitialShutoffRate * (1 - CurrentStep * Condition.RhDecayFact / Condition.NumSteps);
-                    CurrentStep = CurrentStep + 1;
-                    CurrentCatalyticActivity = 1 - CurrentStep * Condition.RhDecayFact / Condition.NumSteps;
-                end
-                % are we done yet?
-                if (CurrentStep == Condition.NumSteps)
-                    break;
-                end
+                TransCount = TransCount + 1;
             end
         end
-
+        
         % generate transductin activity if not stochastic
         if (Condition.DeterministicTrModel)
-            RhTimeCourse = fft(RhTimeCourse);
-            TransducinActivity = real(ifft(RhTimeCourse .* TrFilt));
- %           temp = conv(TrFilt, RhTimeCourse, 'full');
-  %          TransducinActivity = temp(1:Condition.EpochPts);
+            if (Condition.ConvFlag)
+                temp = conv(TrFilt, MeanRhTimeCourse, 'full');
+                TransducinActivity = temp(1:Condition.EpochPts);
+            else
+                RhTimeCourse = fft(RhTimeCourse);
+                TransducinActivity = real(ifft(RhTimeCourse .* TrFilt));
+            end
         end
             
         % compress transducin activity if desired
@@ -143,8 +128,14 @@ else
         end
 
         % convolve transducin time course with linear filter to generate modeled response
-        TransducinActivity = fft(TransducinActivity);
-        ReturnedCondition.EpochData(resp, :) = real(ifft(TransducinActivity .* filt));
+        % convolve transducin time course with linear filter to generate modeled response
+        if (Condition.ConvFlag)
+            temp = conv(TransducinActivity, Filter, 'full');
+            ReturnedCondition.EpochData = temp(1:Condition.EpochPts);
+        else
+            TransducinActivity = fft(TransducinActivity);
+            ReturnedCondition.EpochData(resp, :) = real(ifft(TransducinActivity .* filt));
+        end
 
         % compress if desired
         if (Condition.ResponseCompression > 0)
@@ -156,9 +147,9 @@ else
     ReturnedCondition.MeanTrTimeCourse = ReturnedCondition.MeanTrTimeCourse / NumResponses;
 end
 
-[Peakamp, PeakTime] = max(mean(ReturnedCondition.EpochData));
-NormSingles = resample(ReturnedCondition.EpochData', Condition.NumPtsToPeak, PeakTime) / Peakamp;
-ReturnedCondition.NormSingles = NormSingles;
+% [Peakamp, PeakTime] = max(mean(ReturnedCondition.EpochData));
+% NormSingles = resample(ReturnedCondition.EpochData', Condition.NumPtsToPeak, PeakTime) / Peakamp;
+% ReturnedCondition.NormSingles = NormSingles;
 
 
 
